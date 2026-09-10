@@ -1,0 +1,959 @@
+/* ==========================================================================
+   LANDING PAGE CSS - LIONEL ANDRÉS MESSI
+   Tema: Lapangan Sepak Bola Bersih (Hijau & Putih)
+   Fitur Khusus: Aset Bola Sepak Interaktif & Animasi Berputar
+   Standar: Modul 1 Pemrograman Web 2026 (Pure Native CSS from Scratch)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES (:root)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Warna Lapangan Sepak Bola Asli */
+    --pitch-green: #238636;        /* Hijau rumput segar */
+    --pitch-green-dark: #196428;   /* Hijau tua */
+    --pitch-line: #ffffff;         /* Garis putih lapangan */
+    
+    /* Warna Dasar & Kartu */
+    --color-white: #ffffff;
+    --color-bg: #f6f8fa;           /* Latar terang bersih */
+    --color-border: #d0d7de;       /* Border abu-abu tipis */
+    
+    /* Warna Teks */
+    --text-dark: #1f2328;          /* Teks gelap utama */
+    --text-body: #333d47;          /* Teks isi */
+    --text-muted: #656d76;         /* Teks sekunder */
+    --text-light: #ffffff;         /* Teks putih */
+
+    /* Aksen */
+    --accent-gold: #b45309;
+    --accent-blue: #0969da;
+
+    /* Tipografi */
+    --font-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* Transisi */
+    --transition: 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & GLOBAL
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body.soccer-theme {
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--text-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. ANIMASI BOLA BERPUTAR (Keyframes Sesuai Permintaan)
+   -------------------------------------------------------------------------- */
+@keyframes spinBall {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinBallReverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* Class Putaran Otomatis */
+.spinning-ball {
+    animation: spinBall 6s linear infinite;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.spinning-ball-slow {
+    animation: spinBall 12s linear infinite;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.spinning-ball-reverse {
+    animation: spinBallReverse 8s linear infinite;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+/* Putaran Interaktif saat Elemen Induk di-hover */
+.spinning-on-hover {
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.social-link:hover .spinning-on-hover,
+.card-item:hover .card-title-ball {
+    transform: rotate(360deg);
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVBAR (Sticky, Putih Bersih dengan Bola Berputar)
+   -------------------------------------------------------------------------- */
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
+    border-bottom: 3px solid var(--pitch-green);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.nav-ball-img {
+    border-radius: 50%;
+    border: 2px solid var(--pitch-green);
+}
+
+.nav-logo-text {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.nav-logo-text b {
+    color: var(--pitch-green);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.2rem;
+    position: relative;
+    transition: color var(--transition);
+}
+
+.nav-item:hover {
+    color: var(--pitch-green);
+}
+
+.nav-item.active {
+    color: var(--pitch-green);
+    font-weight: 700;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--pitch-green);
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background-color: var(--pitch-green);
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.95rem;
+    border-radius: 6px;
+    transition: background-color var(--transition);
+}
+
+.nav-btn:hover {
+    background-color: var(--pitch-green-dark);
+}
+
+.btn-ball-icon {
+    border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO SECTION: LAPANGAN SEPAK BOLA & BOLA BERPUTAR
+   -------------------------------------------------------------------------- */
+.hero-section {
+    position: relative;
+    background-color: #12331b;
+    /* Banner Lapangan Sepak Bola Asli (lapangansepakbola.jpg) */
+    background-image: 
+        linear-gradient(rgba(10, 32, 16, 0.72), rgba(8, 24, 12, 0.82)),
+        url('../assets/images/lapangansepakbola.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: var(--text-light);
+    padding: 5rem 0 5.5rem 0;
+    overflow: hidden;
+    border-bottom: 4px solid var(--pitch-green);
+}
+
+
+
+/* Kontainer Konten Hero */
+.hero-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+/* Foto Profil Messi */
+.hero-photo-box {
+    flex: 0 0 290px;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-frame {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: 6px solid var(--color-white);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-white);
+}
+
+.messi-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.ball-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    padding: 3px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--pitch-green);
+}
+
+.ball-badge-img {
+    border-radius: 50%;
+    display: block;
+}
+
+/* Teks Hero */
+.hero-text-box {
+    flex: 1;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--color-white);
+}
+
+.tag-ball-icon {
+    border-radius: 50%;
+}
+
+.hero-name {
+    font-size: 2.85rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+    color: var(--color-white);
+}
+
+.hero-roles {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    color: #e2e8f0;
+}
+
+.hero-roles b {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Kotak Kutipan */
+.quote-box {
+    background-color: rgba(255, 255, 255, 0.96);
+    color: var(--text-dark);
+    border-left: 5px solid var(--accent-gold);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.quote-content {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 0.3rem;
+}
+
+.quote-content mark {
+    background-color: #fef08a;
+    color: #854d0e;
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.quote-by {
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+/* Baris Statistik Angka */
+.stats-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+    padding: 0.45rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 85px;
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.stat-ball {
+    border-radius: 50%;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Baris Media Sosial */
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.social-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: var(--color-white);
+    color: var(--pitch-green-dark);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.4rem 0.75rem;
+    border-radius: 5px;
+    transition: all var(--transition);
+}
+
+.social-link:hover {
+    background-color: #f1f5f9;
+    color: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+.link-ball {
+    border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   6. SHOWCASE SECTION (KARTU PUTIH BERSIH & CSS GRID)
+   -------------------------------------------------------------------------- */
+.showcase-section {
+    padding: 4.5rem 0;
+    background-color: var(--color-bg);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.heading-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    color: var(--pitch-green-dark);
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.heading-ball-icon {
+    border-radius: 50%;
+}
+
+.section-title {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* CSS Grid Wajib: repeat(auto-fit, minmax(300px, 1fr)) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
+}
+
+/* Kartu Putih Bersih */
+.card-item {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    position: relative;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    border-color: var(--pitch-green);
+}
+
+.card-image-box {
+    position: relative;
+    height: 200px;
+    background-color: #cbd5e1;
+    overflow: hidden;
+}
+
+.moment-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition);
+}
+
+.card-item:hover .moment-thumb {
+    transform: scale(1.04);
+}
+
+/* Tag Kategori Kartu dengan Bola Mini */
+.card-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.tag-ball {
+    border-radius: 50%;
+}
+
+.tag-green { background-color: var(--pitch-green); }
+.tag-blue { background-color: #1d4ed8; }
+.tag-gold { background-color: var(--accent-gold); }
+.tag-sky { background-color: #0284c7; }
+
+/* Overlay Tombol saat Hover */
+.card-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition);
+    z-index: 3;
+}
+
+.hover-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: var(--pitch-green);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-white);
+}
+
+.overlay-ball {
+    border-radius: 50%;
+}
+
+.card-item:hover .card-hover-overlay {
+    opacity: 1;
+}
+
+/* Info Kartu */
+.card-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+}
+
+.card-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.55rem;
+    line-height: 1.35;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.card-title-ball {
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.card-description b {
+    color: var(--text-dark);
+}
+
+.card-bottom {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    color: var(--pitch-green-dark);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   7. CALL TO ACTION SECTION (Dengan Trio Bola Berputar)
+   -------------------------------------------------------------------------- */
+.cta-section {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.cta-box {
+    background-color: var(--pitch-green);
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cta-balls-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.cta-ball-img {
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+}
+
+.cta-ball-side {
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+    opacity: 0.9;
+}
+
+.cta-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.cta-desc {
+    max-width: 640px;
+    margin: 0 auto 2rem auto;
+    font-size: 1rem;
+    color: #f1f5f9;
+    line-height: 1.6;
+}
+
+.cta-action {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-white);
+    color: var(--pitch-green-dark);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: #f8fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-ball {
+    border-radius: 50%;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------------------------------- */
+.footer-wrapper {
+    background-color: var(--color-white);
+    padding: 3rem 0 1.5rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-col {
+    flex: 1 1 240px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--pitch-green-dark);
+}
+
+.footer-ball {
+    border-radius: 50%;
+}
+
+.footer-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer-title {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    transition: color var(--transition);
+}
+
+.footer-nav a:hover {
+    color: var(--pitch-green);
+}
+
+.copy-text {
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   9. MEDIA QUERIES (Responsif 3 Breakpoint: PC, Tablet, HP)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-photo-box {
+        flex: 0 0 auto;
+    }
+
+    .photo-frame {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hero-name {
+        font-size: 2.4rem;
+    }
+
+    .stats-row {
+        justify-content: center;
+    }
+
+    .social-row {
+        justify-content: center;
+    }
+
+    .quote-content {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .nav-btn {
+        order: 2;
+    }
+
+    .hero-section {
+        padding: 3rem 0 3.5rem 0;
+    }
+
+    .hero-name {
+        font-size: 2.1rem;
+    }
+
+    .section-title {
+        font-size: 1.85rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-frame {
+        width: 190px;
+        height: 190px;
+    }
+
+    .ball-badge-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-name {
+        font-size: 1.8rem;
+    }
+
+    .hero-roles {
+        font-size: 0.95rem;
+    }
+
+    .stat-item {
+        flex: 1 1 40%;
+        min-width: unset;
+    }
+
+    .social-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .social-link {
+        justify-content: center;
+    }
+
+    .cta-box {
+        padding: 2rem 1.25rem;
+    }
+
+    .cta-title {
+        font-size: 1.45rem;
+    }
+
+    .cta-action {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
