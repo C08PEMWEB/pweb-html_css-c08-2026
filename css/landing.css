@@ -294,24 +294,6 @@ body.soccer-theme {
     flex: 1;
 }
 
-.hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 0.3rem 0.85rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--color-white);
-}
-
-.tag-ball-icon {
-    border-radius: 50%;
-}
-
 .hero-name {
     font-size: 2.85rem;
     font-weight: 800;
@@ -463,24 +445,6 @@ body.soccer-theme {
     margin: 0 auto 3rem auto;
 }
 
-.heading-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-border);
-    color: var(--pitch-green-dark);
-    padding: 0.3rem 0.85rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
-}
-
-.heading-ball-icon {
-    border-radius: 50%;
-}
-
 .section-title {
     font-size: 2.15rem;
     font-weight: 800;
@@ -537,31 +501,6 @@ body.soccer-theme {
 .card-item:hover .moment-thumb {
     transform: scale(1.04);
 }
-
-/* Tag Kategori Kartu dengan Bola Mini */
-.card-tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--color-white);
-}
-
-.tag-ball {
-    border-radius: 50%;
-}
-
-.tag-green { background-color: var(--pitch-green); }
-.tag-blue { background-color: #1d4ed8; }
-.tag-gold { background-color: var(--accent-gold); }
-.tag-sky { background-color: #0284c7; }
 
 /* Overlay Tombol saat Hover */
 .card-hover-overlay {
