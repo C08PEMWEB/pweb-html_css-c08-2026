@@ -316,32 +316,41 @@ body.soccer-theme {
 
 /* Kotak Kutipan */
 .quote-box {
-    background-color: rgba(255, 255, 255, 0.96);
-    color: var(--text-dark);
-    border-left: 5px solid var(--accent-gold);
+    background-color: rgba(30, 41, 59, 0.52);
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 4px solid var(--accent-gold);
     padding: 1rem 1.25rem;
     border-radius: 6px;
     margin-bottom: 1.4rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 .quote-content {
     font-size: 0.95rem;
     line-height: 1.55;
     margin-bottom: 0.3rem;
+    color: #f1f5f9;
+}
+
+.quote-content b {
+    color: #ffffff;
 }
 
 .quote-content mark {
-    background-color: #fef08a;
-    color: #854d0e;
+    background-color: rgba(234, 179, 8, 0.25);
+    color: #fef08a;
     padding: 0.1rem 0.35rem;
     border-radius: 3px;
     font-weight: 600;
+    border: 1px solid rgba(234, 179, 8, 0.4);
 }
 
 .quote-by {
     font-weight: 700;
-    color: var(--text-muted);
+    color: #cbd5e1;
 }
 
 /* Baris Statistik Angka */
