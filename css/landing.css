@@ -511,40 +511,6 @@ body.soccer-theme {
     transform: scale(1.04);
 }
 
-/* Overlay Tombol saat Hover */
-.card-hover-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(15, 23, 42, 0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition);
-    z-index: 3;
-}
-
-.hover-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background-color: var(--pitch-green);
-    color: var(--color-white);
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--color-white);
-}
-
-.overlay-ball {
-    border-radius: 50%;
-}
-
-.card-item:hover .card-hover-overlay {
-    opacity: 1;
-}
-
 /* Info Kartu */
 .card-info {
     padding: 1.25rem;
