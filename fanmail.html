@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kirim pesan penggemar & FAQ - Lionel Andrés Messi - Pemrograman Web Modul 1">
+    <title>Lionel Andrés Messi | Fan Mail & FAQ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style-global.css">
+    <link rel="stylesheet" href="css/fanmail.css">
+</head>
+<body class="soccer-theme">
+
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo" title="Beranda Lionel Messi">
+                <img src="assets/images/soccer-ball.jpg" alt="Bola Sepak" class="nav-ball-img spinning-ball" width="32" height="32">
+                <span class="nav-logo-text">Leo Messi <b>#10</b></span>
+            </a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Buka menu navigasi">
+            <label for="nav-toggle" class="nav-toggle-label" title="Menu Navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">Beranda</a></li>
+                <li><a href="cv.html" class="nav-item">Creative CV</a></li>
+                <li><a href="fanmail.html" class="nav-item active">Fan Mail & FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="fanmail-hero" class="fanmail-hero-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h1 class="section-title">Leo Messi Fan Wall</h1>
+                    <p class="section-sub">Sampaikan dukungan, pertanyaan, atau ajakan kolaborasi melalui kanal penggemar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fanmail-form" class="fanmail-form-section">
+            <div class="container">
+                <form class="fanmail-form" action="#" method="post" novalidate>
+                    <div class="form-row">
+                        <label for="fan-name">Nama Lengkap</label>
+                        <input type="text" id="fan-name" name="fan-name" placeholder="Isi dengan namamu" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="fan-email">Email</label>
+                        <input type="email" id="fan-email" name="fan-email" placeholder="contoh@email.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="fan-country">Negara Asal</label>
+                        <input type="text" id="fan-country" name="fan-country" placeholder="Isi negara asalmu" required>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <span class="form-label-static">Tipe Pesan</span>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="msg-type" value="Fan Support" checked>
+                                <span>Dukungan Penggemar</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="msg-type" value="1-5">
+                                <span>Kolaborasi Komersial</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="msg-type" value="Media Invitation">
+                                <span>Media Invitation</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="fan-message">Pesan Kamu</label>
+                        <textarea id="fan-message" name="fan-message" rows="5" placeholder="Tulis pesan dukungan atau pertanyaan kamu di sini..." required></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn-primary">
+                        <img src="assets/images/soccer-ball.jpg" alt="Bola" class="spinning-ball" width="18" height="18">
+                        <span>Kirim Pesan</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+<div class="faq-list">
+    <details class="faq-item" open>
+        <summary class="faq-question">Kapan Messi mulai bermain sepak bola?</summary>
+        <p class="faq-answer">
+            Messi mulai bermain sepak bola sejak usia sangat muda di Rosario, Argentina.
+            Ia kemudian bergabung dengan akademi FC Barcelona, La Masia, saat masih berusia 13 tahun.
+        </p>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">Kenapa Messi memakai nomor 10?</summary>
+        <p class="faq-answer">
+            Nomor 10 menjadi identik dengan Messi karena perannya sebagai pemain kreatif dan
+            playmaker. Ia mengenakan nomor tersebut selama sebagian besar kariernya di Barcelona
+            dan juga bersama tim nasional Argentina.
+        </p>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">Apa pencapaian terbesar Messi?</summary>
+        <p class="faq-answer">
+            Salah satu pencapaian paling ikonik Messi adalah membawa Argentina menjuarai
+            Piala Dunia 2022. Ia juga memenangkan Ballon d'Or sebanyak delapan kali.
+        </p>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">Di klub mana Messi bermain sekarang?</summary>
+        <p class="faq-answer">
+            Messi bermain untuk Inter Miami CF di Major League Soccer (MLS), setelah bergabung
+            dengan klub tersebut pada 2023.
+        </p>
+    </details>
+</div>
+    </main>
+
+</body>
+</html>
