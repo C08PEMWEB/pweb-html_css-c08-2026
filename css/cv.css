@@ -1,5 +1,602 @@
+:root { 
+    --green: #238636;
+    --green-dark: #196428;
+    --color-white: #ffffff;
+    --color-bg: #f6f8fa;
+    --color-border: #d0d7de;
+    --text-dark: #1f2328;
+    --text-muted: #656d76;
+    --font-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --transition: 0.25s ease;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body.soccer-theme {
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+@keyframes spinBall {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spinning-ball {
+    animation: spinBall 8s linear infinite;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.spinning-on-hover {
+    transition: transform 0.5s ease;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.card-item:hover .spinning-on-hover {
+    transform: rotate(360deg);
+}
+
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
+    border-bottom: 3px solid var(--green);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    padding: 0 2.5rem;
+    position: relative;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.nav-logo b {
+    color: var(--green);
+}
+
+.nav-ball-img {
+    border-radius: 50%;
+    border: 2px solid var(--green);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--green);
+    border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.2rem;
+    transition: color var(--transition);
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--green);
+}
+
+.nav-item.active {
+    font-weight: 700;
+    border-bottom: 2px solid var(--green);
+}
+
+.hero-section {
+    position: relative;
+    background-color: #12331b;
+    background-image: 
+        linear-gradient(rgba(10, 32, 16, 0.72), rgba(8, 24, 12, 0.82)),
+        url('../assets/images/lapangansepakbola.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+    padding: 4.5rem 0 5rem;
+    border-bottom: 4px solid var(--green);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.hero-photo-box {
+    flex: 0 0 260px;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-frame {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid var(--color-white);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-white);
+}
+
+.messi-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.ball-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--green);
+}
+
+.ball-badge img {
+    display: block;
+    border-radius: 50%;
+}
+
+.hero-text-box {
+    flex: 1;
+}
+
+.hero-name {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.35rem;
+    color: var(--color-white);
+}
+
+.hero-roles {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    color: #e2e8f0;
+}
+
+.hero-roles b {
+    color: var(--color-white);
+}
+
+.quote-box {
+    background-color: rgba(30, 41, 59, 0.52);
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 4px solid rgba(255, 255, 255, 0.4);
+    padding: 0.9rem 1.2rem;
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.quote-content {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 0.25rem;
+}
+
+.quote-content mark {
+    background-color: rgba(234, 179, 8, 0.25);
+    color: #fef08a;
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    font-weight: 600;
+    border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.quote-by {
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-white);
+    color: var(--green);
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.social-icon-btn:hover {
+    background-color: #f1f5f9;
+    color: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+.social-icon-btn svg {
+    display: block;
+}
+
+.showcase-section {
+    padding: 4.5rem 0;
+    background-color: var(--color-bg);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.section-title {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+}
+
+.section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-item {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    border-color: var(--green);
+}
+
+.card-image-box {
+    height: 200px;
+    background-color: #cbd5e1;
+    overflow: hidden;
+}
+
+.moment-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition);
+}
+
+.card-item:hover .moment-thumb {
+    transform: scale(1.04);
+}
+
+.card-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+}
+
+.card-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.card-bottom {
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    color: var(--green-dark);
+    font-weight: 600;
+}
+
+.cta-section {
+    padding: 3.5rem 0;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+}
+
+.cta-box {
+    background-color: var(--green);
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 2.5rem 1.75rem;
+    text-align: center;
+}
+
+.cta-ball {
+    border: 3px solid var(--color-white);
+    margin-bottom: 0.85rem;
+}
+
+.cta-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.65rem;
+}
+
+.cta-desc {
+    max-width: 600px;
+    margin: 0 auto 1.75rem;
+    font-size: 0.95rem;
+    color: #f1f5f9;
+}
+
+.cta-action {
+    display: flex;
+    justify-content: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-white);
+    color: var(--green-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color var(--transition);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1.25rem;
+        height: 60px;
+    }
+
+    .nav-toggle-label {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-white);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 3px solid var(--green);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-item {
+        display: block;
+        padding: 0.85rem 1.25rem;
+        width: 100%;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-item.active {
+        border-bottom: 1px solid var(--color-border);
+        background-color: #f0fdf4;
+    }
+
+    .nav-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .hero-photo-box {
+        flex: 0 0 auto;
+        width: auto;
+        height: auto;
+    }
+
+    .photo-frame {
+        width: 210px;
+        height: 210px;
+    }
+
+    .hero-name {
+        font-size: 2.25rem;
+    }
+
+    .social-row {
+        justify-content: center;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-container {
+        gap: 0.85rem;
+    }
+
+    .photo-frame {
+        width: 170px;
+        height: 170px;
+    }
+
+    .ball-badge img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero-name {
+        font-size: 1.75rem;
+    }
+
+    .cta-action {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* =========================================================
    CV.CSS — Styling khusus halaman Creative CV
+   Menggunakan variabel warna dari style-global.css/landing.css
+   (--green, --green-dark, --color-white, --color-bg, --text-dark,
+   --text-muted, --font-base) supaya konsisten dengan index.html.
+ 
    Requirement yang dipenuhi di file ini:
    - Pseudo-class (:hover, :nth-child)
    - Position (relative/absolute)
@@ -8,113 +605,23 @@
    - CSS Grid
    - Responsive (media query)
    ========================================================= */
-
-:root {
-    --cv-dark: #0d1b2a;
-    --cv-green: #2e7d32;
-    --cv-green-light: #66bb6a;
-    --cv-cream: #f5f5f0;
-    --cv-gray: #6b7280;
-}
-
-/* ---------- CV HERO ---------- */
-.cv-hero-section {
-    background: linear-gradient(135deg, var(--cv-dark) 0%, #1b3a2f 100%);
-    padding: 72px 0;
-    color: #fff;
-}
-
-.cv-hero-container {
-    display: flex;                 /* [display: flex] */
-    align-items: center;
-    gap: 48px;
-    flex-wrap: wrap;
-}
-
-.cv-photo-box {
-    position: relative;            /* [position] konteks untuk badge angka */
-    flex-shrink: 0;
-}
-
-.cv-photo-img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--cv-green-light);
-}
-
-.cv-number-badge {
-    position: absolute;            /* [position: absolute] menempel di foto */
-    bottom: 8px;
-    right: 8px;
-    background: var(--cv-green);
-    color: #fff;
-    font-weight: 800;
-    font-size: 0.95rem;
-    padding: 6px 12px;
-    border-radius: 999px;
-    border: 3px solid var(--cv-dark);
-}
-
-.cv-bio-box {
-    flex: 1;
-    min-width: 280px;
-}
-
-.cv-eyebrow {
-    color: var(--cv-green-light);
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.cv-name {
-    font-size: 2.4rem;
-    margin: 6px 0 14px;
-}
-
-.cv-bio-text {
-    color: #d5d9dd;
-    line-height: 1.7;
-    max-width: 60ch;
-}
-
-.cv-stats-row {
-    display: flex;                 /* [display: flex] */
-    gap: 32px;
-    margin: 24px 0;
-    flex-wrap: wrap;
-}
-
-.cv-stat-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.cv-stat-item strong {
-    font-size: 1.6rem;
-    color: var(--cv-green-light);
-}
-
-.cv-stat-item span {
-    font-size: 0.85rem;
-    color: #b7bcc2;
-}
-
-.cv-download-btn {
-    display: inline-block;
-    margin-top: 8px;
-}
-
+ 
+/* Catatan: Section hero sekarang memakai class dari css/landing.css
+   (.hero-section, .photo-frame, .hero-name, .quote-box, .social-row, dst)
+   supaya identik dengan hero di index.html. Pastikan landing.css sudah
+   di-link di cv.html SEBELUM cv.css. Karena itu, style .cv-hero-* versi
+   lama sudah dihapus dari file ini karena tidak lagi dipakai. */
+ 
 /* ---------- SECTION UMUM ---------- */
 .cv-section {
-    padding: 72px 0;
+    padding: 4.5rem 0;
+    background-color: var(--color-bg);
 }
-
+ 
 .cv-section-alt {
-    background: var(--cv-cream);
+    background-color: var(--color-white);
 }
-
+ 
 /* ---------- TIMELINE (Experience) ---------- */
 .timeline {
     position: relative;            /* [position] induk garis vertikal */
@@ -122,7 +629,7 @@
     margin: 0 auto;
     padding-left: 32px;
 }
-
+ 
 .timeline::before {
     content: "";
     position: absolute;            /* [position: absolute] garis timeline */
@@ -130,18 +637,18 @@
     top: 6px;
     bottom: 6px;
     width: 2px;
-    background: var(--cv-green-light);
+    background: var(--green);
 }
-
+ 
 .timeline-item {
     position: relative;
-    margin-bottom: 36px;
+    margin-bottom: 2.25rem;
 }
-
+ 
 .timeline-item:last-child {
     margin-bottom: 0;
 }
-
+ 
 .timeline-dot {
     position: absolute;            /* [position: absolute] titik penanda */
     left: -32px;
@@ -149,142 +656,412 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: var(--cv-green);
-    border: 3px solid var(--cv-cream);
-    box-shadow: 0 0 0 2px var(--cv-green-light);
+    background: var(--green);
+    border: 3px solid var(--color-bg);
+    box-shadow: 0 0 0 2px var(--green);
 }
-
+ 
 .timeline-content {
-    background: #fff;
-    padding: 18px 22px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    padding: 1.1rem 1.4rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition), border-color var(--transition);
 }
-
+ 
 .timeline-content:hover {          /* [pseudo-class :hover] */
     transform: translateX(6px);
+    border-color: var(--green);
 }
-
+ 
 .timeline-year {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: var(--cv-green);
+    color: var(--green-dark);
+    text-transform: uppercase;
 }
-
+ 
 .timeline-content h3 {
-    margin: 6px 0;
-    color: var(--cv-dark);
+    margin: 0.4rem 0;
+    color: var(--text-dark);
 }
-
+ 
 .timeline-content p {
-    color: var(--cv-gray);
+    color: var(--text-muted);
     line-height: 1.6;
     margin: 0;
+    font-size: 0.92rem;
 }
-
+ 
 /* ---------- EDUCATION GRID ---------- */
 .education-grid {
     display: grid;                 /* [display: grid] */
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 1.25rem;
 }
-
+ 
 .education-card {
-    background: #fff;
-    border: 1px solid #e5e7eb;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
     border-radius: 10px;
-    padding: 20px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    padding: 1.25rem;
+    transition: border-color var(--transition), transform var(--transition);
 }
-
+ 
 .education-card:hover {            /* [pseudo-class :hover] */
-    border-color: var(--cv-green-light);
+    border-color: var(--green);
     transform: translateY(-4px);
 }
-
+ 
 .education-card:nth-child(even) {  /* [pseudo-class :nth-child] */
-    background: #fafdf9;
+    background: var(--color-white);
 }
-
+ 
 .education-year {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    color: var(--cv-green);
+    color: var(--green-dark);
+    text-transform: uppercase;
 }
-
+ 
 .education-card h3 {
-    margin: 8px 0;
+    margin: 0.5rem 0;
     font-size: 1.05rem;
-    color: var(--cv-dark);
+    color: var(--text-dark);
 }
-
+ 
 .education-card p {
-    color: var(--cv-gray);
+    color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.6;
     margin: 0;
 }
-
+ 
 /* ---------- SKILLS ---------- */
 .skills-grid {
     display: grid;                 /* [display: grid] */
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 1.75rem;
 }
-
+ 
 .skill-label {
     display: flex;                 /* [display: flex] */
     justify-content: space-between;
-    font-weight: 600;
-    color: var(--cv-dark);
-    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
 }
-
+ 
 .skill-bar {
     width: 100%;
     height: 10px;
-    background: #e5e7eb;
+    background: var(--color-border);
     border-radius: 999px;
     overflow: hidden;
 }
-
+ 
 .skill-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--cv-green) 0%, var(--cv-green-light) 100%);
+    background: linear-gradient(90deg, var(--green-dark) 0%, var(--green) 100%);
     border-radius: 999px;
 }
-
+ 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 992px) {
     .education-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
+ 
     .skills-grid {
         grid-template-columns: 1fr;
     }
 }
-
-@media (max-width: 640px) {
+ 
+@media (max-width: 768px) {
+    .cv-hero-section {
+        padding: 3rem 0;
+    }
+ 
     .cv-hero-container {
         flex-direction: column;    /* [flex-direction] tumpuk vertikal di HP */
         text-align: center;
+        gap: 1.25rem;
     }
-
+ 
+    .cv-photo-frame {
+        width: 210px;
+        height: 210px;
+    }
+ 
+    .cv-name {
+        font-size: 2.25rem;
+    }
+ 
     .cv-stats-row {
         justify-content: center;
     }
-
+ 
     .education-grid {
         grid-template-columns: 1fr;
     }
-
+ 
     .timeline {
         padding-left: 24px;
     }
-
+ 
     .timeline-dot {
         left: -24px;
     }
 }
+ 
+@media (max-width: 480px) {
+    .cv-photo-frame {
+        width: 170px;
+        height: 170px;
+    }
+ 
+    .cv-name {
+        font-size: 1.75rem;
+    }
+ 
+    .cv-stats-row {
+        gap: 1.5rem;
+    }
+}
+ 
+/* =========================================================
+   SECTION TAMBAHAN: Biografi, Pencapaian, Trofi, Statistik,
+   Video Gol Terbaik, Aktivitas Mitra
+   ========================================================= */
+ 
+/* ---------- BIOGRAFI ---------- */
+.bio-content {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;                 /* [display: flex] */
+    flex-direction: column;
+    gap: 1.1rem;
+}
+ 
+.bio-content p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+ 
+/* ---------- PENCAPAIAN PRIBADI ---------- */
+.achievement-grid {
+    display: grid;                 /* [display: grid] */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+ 
+.achievement-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform var(--transition), border-color var(--transition);
+}
+ 
+.achievement-card:hover {          /* [pseudo-class :hover] */
+    transform: translateY(-4px);
+    border-color: var(--green);
+}
+ 
+.achievement-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 0.4rem;
+}
+ 
+.achievement-card h3 {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+ 
+.achievement-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+ 
+/* ---------- TROFI KLUB ---------- */
+.trophy-grid {
+    display: grid;                 /* [display: grid] */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+ 
+.trophy-card {
+    background: var(--color-bg);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 1.4rem;
+}
+ 
+.trophy-card h3 {
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+ 
+.trophy-list {
+    list-style: none;
+    display: flex;                 /* [display: flex] */
+    flex-direction: column;
+    gap: 0.5rem;
+}
+ 
+.trophy-list li {
+    position: relative;            /* [position] untuk bullet custom */
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+ 
+.trophy-list li::before {
+    content: "\26BD";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    font-size: 0.75rem;
+}
+ 
+/* ---------- STATISTIK ---------- */
+.stats-grid {
+    display: grid;                 /* [display: grid] */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    text-align: center;
+}
+ 
+.stats-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.75rem 1rem;
+    transition: transform var(--transition);
+}
+ 
+.stats-card:hover {                /* [pseudo-class :hover] */
+    transform: translateY(-4px);
+}
+ 
+.stats-card strong {
+    display: block;
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--green-dark);
+}
+ 
+.stats-card span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+ 
+.stats-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1.25rem;
+    font-style: italic;
+}
+ 
+/* ---------- CUPLIKAN GOL TERBAIK ---------- */
+.video-grid {
+    display: grid;                 /* [display: grid] */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+ 
+.video-frame {
+    position: relative;            /* [position] untuk rasio 16:9 responsif */
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+ 
+.video-frame iframe {
+    position: absolute;            /* [position: absolute] */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+ 
+.video-caption {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+ 
+/* ---------- AKTIVITAS BERSAMA MITRA ---------- */
+.partner-grid {
+    display: grid;                 /* [display: grid] */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+ 
+.partner-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.4rem;
+    transition: border-color var(--transition), transform var(--transition);
+}
+ 
+.partner-card:hover {              /* [pseudo-class :hover] */
+    border-color: var(--green);
+    transform: translateY(-4px);
+}
+ 
+.partner-card:nth-child(odd) {     /* [pseudo-class :nth-child] */
+    background: var(--color-bg);
+}
+ 
+.partner-card h3 {
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+ 
+.partner-card p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+ 
+/* ---------- RESPONSIVE TAMBAHAN ---------- */
+@media (max-width: 992px) {
+    .achievement-grid,
+    .trophy-grid,
+    .stats-grid,
+    .partner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .achievement-grid,
+    .trophy-grid,
+    .stats-grid,
+    .partner-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
