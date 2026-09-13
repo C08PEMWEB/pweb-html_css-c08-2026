@@ -41,6 +41,7 @@
         <section id="fanmail-hero" class="fanmail-hero-section">
             <div class="container">
                 <div class="section-heading">
+                    <span class="section-badge">💬 Kotak Masuk Penggemar</span>
                     <h1 class="section-title">Leo Messi Fan Wall</h1>
                     <p class="section-sub">Sampaikan dukungan, pertanyaan, atau ajakan kolaborasi melalui kanal penggemar.</p>
                 </div>
@@ -49,7 +50,7 @@
 
         <section id="fanmail-form" class="fanmail-form-section">
             <div class="container">
-                <form class="fanmail-form" action="#" method="post" novalidate>
+                <form class="fanmail-form">
                     <div class="form-row">
                         <label for="fan-name">Nama Lengkap</label>
                         <input type="text" id="fan-name" name="fan-name" placeholder="Isi dengan namamu" required>
@@ -63,7 +64,6 @@
                     <div class="form-row">
                         <label for="fan-country">Negara Asal</label>
                         <input type="text" id="fan-country" name="fan-country" placeholder="Isi negara asalmu" required>
-                        </select>
                     </div>
 
                     <div class="form-row">
@@ -74,12 +74,12 @@
                                 <span>Dukungan Penggemar</span>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="msg-type" value="1-5">
+                                <input type="radio" name="msg-type" value="Komersial">
                                 <span>Kolaborasi Komersial</span>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="msg-type" value="Media Invitation">
-                                <span>Media Invitation</span>
+                                <span>Undangan Media</span>
                             </label>
                         </div>
                     </div>
@@ -89,48 +89,75 @@
                         <textarea id="fan-message" name="fan-message" rows="5" placeholder="Tulis pesan dukungan atau pertanyaan kamu di sini..." required></textarea>
                     </div>
 
-
                     <button type="submit" class="btn-primary">
-                        <img src="assets/images/soccer-ball.jpg" alt="Bola" class="spinning-ball" width="18" height="18">
+                        <img src="assets/images/soccer-ball.jpg" alt="Bola" class="spinning-on-hover" width="18" height="18">
                         <span>Kirim Pesan</span>
                     </button>
                 </form>
             </div>
         </section>
-<div class="faq-list">
-    <details class="faq-item" open>
-        <summary class="faq-question">Kapan Messi mulai bermain sepak bola?</summary>
-        <p class="faq-answer">
-            Messi mulai bermain sepak bola sejak usia sangat muda di Rosario, Argentina.
-            Ia kemudian bergabung dengan akademi FC Barcelona, La Masia, saat masih berusia 13 tahun.
-        </p>
-    </details>
 
-    <details class="faq-item">
-        <summary class="faq-question">Kenapa Messi memakai nomor 10?</summary>
-        <p class="faq-answer">
-            Nomor 10 menjadi identik dengan Messi karena perannya sebagai pemain kreatif dan
-            playmaker. Ia mengenakan nomor tersebut selama sebagian besar kariernya di Barcelona
-            dan juga bersama tim nasional Argentina.
-        </p>
-    </details>
+        <section id="faq" class="faq-section">
+            <div class="container">
 
-    <details class="faq-item">
-        <summary class="faq-question">Apa pencapaian terbesar Messi?</summary>
-        <p class="faq-answer">
-            Salah satu pencapaian paling ikonik Messi adalah membawa Argentina menjuarai
-            Piala Dunia 2022. Ia juga memenangkan Ballon d'Or sebanyak delapan kali.
-        </p>
-    </details>
+                <div class="faq-header">
+                    <h2 class="section-title">Pertanyaan Umum</h2>
+                    <p class="section-sub">Beberapa pertanyaan yang paling sering ditanyakan penggemar.</p>
+                </div>
 
-    <details class="faq-item">
-        <summary class="faq-question">Di klub mana Messi bermain sekarang?</summary>
-        <p class="faq-answer">
-            Messi bermain untuk Inter Miami CF di Major League Soccer (MLS), setelah bergabung
-            dengan klub tersebut pada 2023.
-        </p>
-    </details>
-</div>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary class="faq-question">Kapan Messi mulai bermain sepak bola? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            <p>Messi mulai bermain sepak bola sejak usia sangat muda di Rosario, Argentina. Ia kemudian bergabung dengan akademi FC Barcelona, La Masia, saat masih berusia 13 tahun.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Kenapa Messi memakai nomor 10? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            <p>Nomor 10 menjadi identik dengan Messi karena perannya sebagai pemain kreatif dan playmaker. Ia mengenakan nomor tersebut selama sebagian besar kariernya di Barcelona dan juga bersama tim nasional Argentina.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Apa pencapaian terbesar Messi? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            <p>Salah satu pencapaian paling ikonik Messi adalah membawa Argentina menjuarai Piala Dunia 2022. Ia juga memenangkan Ballon d'Or sebanyak delapan kali.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Di klub mana Messi bermain sekarang? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            <p>Messi bermain untuk Inter Miami CF di Major League Soccer (MLS), setelah bergabung dengan klub tersebut pada 2023.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="cta" class="cta-section">
+            <div class="container">
+                <div class="cta-box">
+                    <img src="assets/images/soccer-ball.jpg" alt="Bola Sepak" class="cta-ball spinning-ball" width="54" height="54">
+                    <h2 class="cta-title">Sudah Selesai Mengirim Pesan?</h2>
+                    <p class="cta-desc">
+                        Sambil menunggu balasan, yuk pelajari perjalanan karir dan trofi Lionel Messi dari awal hingga menjadi The GOAT di halaman <b>Creative CV</b>.
+                    </p>
+                    <div class="cta-action">
+                        <a href="cv.html" class="btn-primary">
+                            <img src="assets/images/soccer-ball.jpg" alt="Bola" class="spinning-ball" width="18" height="18">
+                            <span>Buka Creative CV</span>
+                        </a>
+                        <a href="index.html" class="btn-outline">
+                            <span>Kembali ke Beranda</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer-wrapper">
