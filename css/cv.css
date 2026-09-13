@@ -591,38 +591,44 @@ body.soccer-theme {
     }
 }
 
-/* =========================================================
-   CV.CSS — Styling khusus halaman Creative CV
-   Menggunakan variabel warna dari style-global.css/landing.css
-   (--green, --green-dark, --color-white, --color-bg, --text-dark,
-   --text-muted, --font-base) supaya konsisten dengan index.html.
- 
-   Requirement yang dipenuhi di file ini:
-   - Pseudo-class (:hover, :nth-child)
-   - Position (relative/absolute)
-   - Display (flex, grid, block)
-   - Flexbox
-   - CSS Grid
-   - Responsive (media query)
-   ========================================================= */
- 
-/* Catatan: Section hero sekarang memakai class dari css/landing.css
-   (.hero-section, .photo-frame, .hero-name, .quote-box, .social-row, dst)
-   supaya identik dengan hero di index.html. Pastikan landing.css sudah
-   di-link di cv.html SEBELUM cv.css. Karena itu, style .cv-hero-* versi
-   lama sudah dihapus dari file ini karena tidak lagi dipakai. */
- 
-/* ---------- SECTION UMUM ---------- */
-.cv-section {
-    padding: 4.5rem 0;
-    background-color: var(--color-bg);
+/* ==================================================================UMUM==================================================================*/
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 5rem;
 }
- 
-.cv-section-alt {
-    background-color: var(--color-white);
+
+.section-heading {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
 }
- 
-/* ---------- TIMELINE (Experience) ---------- */
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-top: 3rem;
+}
+
+/* ==================================================================BIO==================================================================*/
+.section-sub-bio {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.bio-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    text-align: justify;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+/* ==================================================================PERJALANAN KARIER==================================================================*/
 .timeline {
     position: relative;            /* [position] induk garis vertikal */
     max-width: 720px;
@@ -693,375 +699,386 @@ body.soccer-theme {
     margin: 0;
     font-size: 0.92rem;
 }
- 
-/* ---------- EDUCATION GRID ---------- */
-.education-grid {
-    display: grid;                 /* [display: grid] */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-}
- 
-.education-card {
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 1.25rem;
-    transition: border-color var(--transition), transform var(--transition);
-}
- 
-.education-card:hover {            /* [pseudo-class :hover] */
-    border-color: var(--green);
-    transform: translateY(-4px);
-}
- 
-.education-card:nth-child(even) {  /* [pseudo-class :nth-child] */
-    background: var(--color-white);
-}
- 
-.education-year {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--green-dark);
-    text-transform: uppercase;
-}
- 
-.education-card h3 {
-    margin: 0.5rem 0;
-    font-size: 1.05rem;
-    color: var(--text-dark);
-}
- 
-.education-card p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin: 0;
-}
- 
-/* ---------- SKILLS ---------- */
-.skills-grid {
-    display: grid;                 /* [display: grid] */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
-}
- 
-.skill-label {
-    display: flex;                 /* [display: flex] */
-    justify-content: space-between;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-}
- 
-.skill-bar {
-    width: 100%;
-    height: 10px;
-    background: var(--color-border);
-    border-radius: 999px;
-    overflow: hidden;
-}
- 
-.skill-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--green-dark) 0%, var(--green) 100%);
-    border-radius: 999px;
-}
- 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 992px) {
-    .education-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
- 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}
- 
-@media (max-width: 768px) {
-    .cv-hero-section {
-        padding: 3rem 0;
-    }
- 
-    .cv-hero-container {
-        flex-direction: column;    /* [flex-direction] tumpuk vertikal di HP */
-        text-align: center;
-        gap: 1.25rem;
-    }
- 
-    .cv-photo-frame {
-        width: 210px;
-        height: 210px;
-    }
- 
-    .cv-name {
-        font-size: 2.25rem;
-    }
- 
-    .cv-stats-row {
-        justify-content: center;
-    }
- 
-    .education-grid {
-        grid-template-columns: 1fr;
-    }
- 
-    .timeline {
-        padding-left: 24px;
-    }
- 
-    .timeline-dot {
-        left: -24px;
-    }
-}
- 
-@media (max-width: 480px) {
-    .cv-photo-frame {
-        width: 170px;
-        height: 170px;
-    }
- 
-    .cv-name {
-        font-size: 1.75rem;
-    }
- 
-    .cv-stats-row {
-        gap: 1.5rem;
-    }
-}
- 
-/* =========================================================
-   SECTION TAMBAHAN: Biografi, Pencapaian, Trofi, Statistik,
-   Video Gol Terbaik, Aktivitas Mitra
-   ========================================================= */
- 
-/* ---------- BIOGRAFI ---------- */
-.bio-content {
-    max-width: 760px;
-    margin: 0 auto;
-    display: flex;                 /* [display: flex] */
-    flex-direction: column;
-    gap: 1.1rem;
-}
- 
-.bio-content p {
-    color: var(--text-muted);
-    line-height: 1.8;
-    font-size: 1rem;
-}
- 
-/* ---------- PENCAPAIAN PRIBADI ---------- */
-.achievement-grid {
-    display: grid;                 /* [display: grid] */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-}
- 
-.achievement-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform var(--transition), border-color var(--transition);
-}
- 
-.achievement-card:hover {          /* [pseudo-class :hover] */
-    transform: translateY(-4px);
-    border-color: var(--green);
-}
- 
-.achievement-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--green);
-    margin-bottom: 0.4rem;
-}
- 
-.achievement-card h3 {
-    font-size: 1rem;
-    color: var(--text-dark);
-    margin-bottom: 0.4rem;
-}
- 
-.achievement-card p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
- 
-/* ---------- TROFI KLUB ---------- */
-.trophy-grid {
-    display: grid;                 /* [display: grid] */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-}
- 
-.trophy-card {
-    background: var(--color-bg);
-    border-left: 4px solid var(--green);
-    border-radius: 8px;
-    padding: 1.4rem;
-}
- 
-.trophy-card h3 {
+
+/* ==================================================================PENCAPAIAN PRIBADI==================================================================*/
+.ballondor {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 0.75rem;
-    font-size: 1.05rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
 }
- 
-.trophy-list {
-    list-style: none;
-    display: flex;                 /* [display: flex] */
-    flex-direction: column;
-    gap: 0.5rem;
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
- 
-.trophy-list li {
-    position: relative;            /* [position] untuk bullet custom */
-    padding-left: 1.2rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+
+.ballondor {
+    display: flex;
+    gap: 30px;
+    width: max-content; 
+    animation: gerakSamping 20s linear infinite; 
 }
- 
-.trophy-list li::before {
-    content: "\26BD";
-    position: absolute;
-    left: 0;
-    top: -1px;
-    font-size: 0.75rem;
-}
- 
-/* ---------- STATISTIK ---------- */
-.stats-grid {
-    display: grid;                 /* [display: grid] */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+
+.kolom {
+    background: linear-gradient(135deg, #FFD700 0%, #FFF8DC 30%, #FFD700 60%, #B8860B 100%);
+    padding: 90px 75px; 
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 8px 15px rgba(218, 165, 32, 0.4), inset 0 2px 5px rgba(255,255,255,0.8);
+    flex-shrink: 0; 
+    min-width: 120px; 
 }
- 
-.stats-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 1.75rem 1rem;
-    transition: transform var(--transition);
+
+.kolom img {
+    width: 130px; 
+    height: auto; 
+    margin: 5px 0;
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2));
 }
- 
-.stats-card:hover {                /* [pseudo-class :hover] */
-    transform: translateY(-4px);
-}
- 
-.stats-card strong {
-    display: block;
-    font-size: 2.1rem;
+
+.kolom p {
+    margin: 0;
+    font-size: 20px; 
     font-weight: 800;
-    color: var(--green-dark);
+    color: #4a3500; 
 }
- 
+
+@keyframes gerakSamping {
+    0% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
+/* ==================================================================TROFI BERSAMA KLUB==================================================================*/
+/* Container Utama untuk membentuk grid responsif */
+.trophy-grid {
+    display: grid;
+    /* Otomatis membagi kolom menyesuaikan layar, minimal lebar 250px per kartu */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; 
+    margin-top: 30px; 
+}
+
+/* Desain Dasar Kartu */
+.trophy-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+/* Efek saat kursor diarahkan ke kartu (Hover) */
+.trophy-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+  Memberikan warna garis secara otomatis berdasarkan urutan kartu.
+  Anda tidak perlu menambahkan class baru di HTML.
+*/
+.trophy-card:nth-child(1) { border-top: 5px solid #A50044; } /* 1. Barca (Merah Maroon) */
+.trophy-card:nth-child(2) { border-top: 5px solid #004170; } /* 2. PSG (Biru Tua) */
+.trophy-card:nth-child(3) { border-top: 5px solid #F7B5CD; } /* 3. Inter Miami (Pink) */
+.trophy-card:nth-child(4) { border-top: 5px solid #43A1D5; } /* 4. Argentina (Biru Muda) */
+
+/* Judul Tim */
+.trophy-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333333;
+    border-bottom: 2px dashed #eaeaea; 
+    padding-bottom: 12px;
+}
+
+/* Membersihkan list bawaan HTML */
+.trophy-list {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+/* Mengatur jarak antar teks piala */
+.trophy-list li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #555555;
+    display: flex;
+    align-items: center;
+}
+
+/* Menambahkan emoji/ikon piala di samping kiri setiap teks pencapaian */
+.trophy-list li::before {
+    content: "🏆"; 
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+/* ==================================================================STATISTIK==================================================================*/
+/* Container untuk grid statistik */
+.stats-grid {
+    display: grid;
+    /* Otomatis membuat 4 kolom di PC, 2 di Tablet, 1 di HP */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* Desain kotak/kartu statistik */
+.stats-card {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+    border: 1px solid #f0f0f0;
+    border-bottom: 5px solid #43A1D5; /* Garis aksen biru Argentina di bawah */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek melayang saat kursor diarahkan (hover) */
+.stats-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Tipografi untuk Angka (Super Besar & Mewah) */
+.stats-card strong {
+    font-size: 3.5rem; /* Ukuran angka sangat besar */
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+    /* Efek teks gradasi warna (biru ke ungu/hitam) */
+    background: linear-gradient(135deg, #43A1D5 0%, #004170 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Tipografi untuk Label/Teks Keterangan */
 .stats-card span {
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    font-size: 1.1rem;
+    color: #555555;
+    font-weight: 600;
+    text-transform: uppercase; /* Huruf kapital semua */
+    letter-spacing: 1px;
 }
- 
+
+/* Catatan kaki statistik */
 .stats-note {
     text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    color: #888888;
     font-style: italic;
+    margin-top: 20px;
 }
- 
-/* ---------- CUPLIKAN GOL TERBAIK ---------- */
+
+/* ==================================================================GOLLLL==================================================================*/
+/* Container Video agar berbentuk grid berjajar */
 .video-grid {
-    display: grid;                 /* [display: grid] */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    display: grid;
+    /* Otomatis membuat 3 kolom di PC, 1 di HP */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
- 
+
+/* Desain Kartu Video */
+.video-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* Mencegah video keluar dari lengkungan border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 
+  Trik CSS untuk membuat iframe YouTube responsif dan selalu rasio 16:9 
+*/
 .video-frame {
-    position: relative;            /* [position] untuk rasio 16:9 responsif */
-    width: 100%;
-    padding-top: 56.25%;
-    border-radius: 10px;
+    position: relative;
+    padding-bottom: 56.25%; /* Rasio 16:9 (9 / 16 * 100) */
+    height: 0;
     overflow: hidden;
-    background: #000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
- 
+
 .video-frame iframe {
-    position: absolute;            /* [position: absolute] */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0;
-}
- 
-.video-caption {
-    margin-top: 0.6rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-align: center;
-}
- 
-/* ---------- AKTIVITAS BERSAMA MITRA ---------- */
-.partner-grid {
-    display: grid;                 /* [display: grid] */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-}
- 
-.partner-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 1.4rem;
-    transition: border-color var(--transition), transform var(--transition);
-}
- 
-.partner-card:hover {              /* [pseudo-class :hover] */
-    border-color: var(--green);
-    transform: translateY(-4px);
-}
- 
-.partner-card:nth-child(odd) {     /* [pseudo-class :nth-child] */
-    background: var(--color-bg);
-}
- 
-.partner-card h3 {
-    color: var(--green-dark);
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
- 
-.partner-card p {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    line-height: 1.6;
-}
- 
-/* ---------- RESPONSIVE TAMBAHAN ---------- */
-@media (max-width: 992px) {
-    .achievement-grid,
-    .trophy-grid,
-    .stats-grid,
-    .partner-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
- 
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-}
- 
-@media (max-width: 480px) {
-    .achievement-grid,
-    .trophy-grid,
-    .stats-grid,
-    .partner-grid {
-        grid-template-columns: 1fr;
-    }
+    border: none;
 }
 
+/* Teks Keterangan di bawah video */
+.video-caption {
+    padding: 18px 20px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ==================================================================SKILLLL==================================================================*/
+/* Container Skills agar terbagi menjadi 2 kolom di layar lebar */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 50px;
+    row-gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Mengatur posisi Nama Skill (kiri) dan Angka % (kanan) */
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+}
+
+.skill-label span:last-child {
+    color: #43A1D5; /* Warna aksen biru untuk angkanya */
+}
+
+/* Latar belakang bar (jalur abu-abu) */
+.skill-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e5e7eb; /* Abu-abu terang */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Isi bar (warna gradasi yang merepresentasikan nilai persen) */
+.skill-fill {
+    height: 100%;
+    /* Gradasi Biru khas Argentina/Mewah */
+    background: linear-gradient(90deg, #43A1D5 0%, #004170 100%);
+    border-radius: 10px;
+    
+    /* Efek animasi dari angka 0 ke angka tujuan saat diload */
+    transform-origin: left;
+    animation: barBerjalan 1.5s ease-out forwards;
+}
+
+/* Animasi untuk Progress Bar */
+@keyframes barBerjalan {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+/* ==================================================================MITRA EUY==================================================================*/
+/* Container Utama Grid */
+.partner-grid {
+    display: grid;
+    /* Otomatis membuat 2 kolom di layar lebar, 1 kolom di HP */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Desain Dasar Kartu (Sleek & Clean) */
+.partner-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden; /* Penting agar efek background tidak keluar batas */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f4f4f4;
+    
+    /* Animasi bouncy saat kartu terangkat */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+/* Elemen Rahasia untuk Efek "WOW" (Background yang tersembunyi di bawah) */
+.partner-card::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Mulai dari luar layar bagian bawah kartu */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradasi hijau senada dengan tombol di bagian bawah website Anda */
+    background: linear-gradient(135deg, #1e7e34 0%, #2ecc71 100%);
+    transition: top 0.4s ease-out;
+    z-index: -1;
+}
+
+/* Efek saat kursor diarahkan ke kartu (Hover) */
+.partner-card:hover {
+    transform: translateY(-10px); /* Kartu melayang naik */
+    box-shadow: 0 15px 35px rgba(46, 204, 113, 0.3); /* Bayangan berubah kehijauan */
+}
+
+/* Menarik background hijau ke atas menutupi kartu */
+.partner-card:hover::before {
+    top: 0; 
+}
+
+/* Tipografi Judul */
+.partner-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #222222;
+    margin-top: 0;
+    margin-bottom: 15px;
+    transition: color 0.3s ease; /* Transisi warna teks agar halus */
+}
+
+/* Tipografi Paragraf */
+.partner-card p {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* 
+  Kunci Estetika: 
+  Mengubah teks menjadi putih saat background hijau naik, 
+  sehingga tetap terbaca dengan kontras yang baik. 
+*/
+.partner-card:hover h3,
+.partner-card:hover p {
+    color: #ffffff;
+}
