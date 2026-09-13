@@ -659,7 +659,7 @@ body.soccer-theme {
 
 /* ==================================================================PERJALANAN KARIER==================================================================*/
 .timeline {
-    position: relative;            /* [position] induk garis vertikal */
+    position: relative;           
     max-width: 720px;
     margin: 0 auto;
     padding-left: 32px;
@@ -667,7 +667,7 @@ body.soccer-theme {
  
 .timeline::before {
     content: "";
-    position: absolute;            /* [position: absolute] garis timeline */
+    position: absolute;           
     left: 6px;
     top: 6px;
     bottom: 6px;
@@ -685,7 +685,7 @@ body.soccer-theme {
 }
  
 .timeline-dot {
-    position: absolute;            /* [position: absolute] titik penanda */
+    position: absolute;            
     left: -32px;
     top: 4px;
     width: 14px;
@@ -705,7 +705,7 @@ body.soccer-theme {
     transition: transform var(--transition), border-color var(--transition);
 }
  
-.timeline-content:hover {          /* [pseudo-class :hover] */
+.timeline-content:hover {          
     transform: translateX(6px);
     border-color: var(--green);
 }
@@ -793,16 +793,13 @@ body.soccer-theme {
 }
 
 /* ==================================================================TROFI BERSAMA KLUB==================================================================*/
-/* Container Utama untuk membentuk grid responsif */
 .trophy-grid {
     display: grid;
-    /* Otomatis membagi kolom menyesuaikan layar, minimal lebar 250px per kartu */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px; 
     margin-top: 30px; 
 }
 
-/* Desain Dasar Kartu */
 .trophy-card {
     background-color: #ffffff;
     border-radius: 12px;
@@ -812,22 +809,16 @@ body.soccer-theme {
     border: 1px solid #f0f0f0;
 }
 
-/* Efek saat kursor diarahkan ke kartu (Hover) */
 .trophy-card:hover {
     transform: translateY(-8px); 
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* 
-  Memberikan warna garis secara otomatis berdasarkan urutan kartu.
-  Anda tidak perlu menambahkan class baru di HTML.
-*/
-.trophy-card:nth-child(1) { border-top: 5px solid #A50044; } /* 1. Barca (Merah Maroon) */
-.trophy-card:nth-child(2) { border-top: 5px solid #004170; } /* 2. PSG (Biru Tua) */
-.trophy-card:nth-child(3) { border-top: 5px solid #F7B5CD; } /* 3. Inter Miami (Pink) */
-.trophy-card:nth-child(4) { border-top: 5px solid #43A1D5; } /* 4. Argentina (Biru Muda) */
+.trophy-card:nth-child(1) { border-top: 5px solid #A50044; } 
+.trophy-card:nth-child(2) { border-top: 5px solid #004170; } 
+.trophy-card:nth-child(3) { border-top: 5px solid #F7B5CD; } 
+.trophy-card:nth-child(4) { border-top: 5px solid #43A1D5; } 
 
-/* Judul Tim */
 .trophy-card h3 {
     margin-top: 0;
     margin-bottom: 15px;
@@ -837,14 +828,12 @@ body.soccer-theme {
     padding-bottom: 12px;
 }
 
-/* Membersihkan list bawaan HTML */
 .trophy-list {
     list-style: none; 
     padding: 0;
     margin: 0;
 }
 
-/* Mengatur jarak antar teks piala */
 .trophy-list li {
     margin-bottom: 12px;
     font-size: 16px;
@@ -853,7 +842,6 @@ body.soccer-theme {
     align-items: center;
 }
 
-/* Menambahkan emoji/ikon piala di samping kiri setiap teks pencapaian */
 .trophy-list li::before {
     content: "🏆"; 
     margin-right: 12px;
@@ -861,24 +849,21 @@ body.soccer-theme {
 }
 
 /* ==================================================================STATISTIK==================================================================*/
-/* Container untuk grid statistik */
 .stats-grid {
     display: grid;
-    /* Otomatis membuat 4 kolom di PC, 2 di Tablet, 1 di HP */
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     margin: 40px 0;
 }
 
-/* Desain kotak/kartu statistik */
 .stats-card {
     background: #ffffff;
     padding: 40px 20px;
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
     border: 1px solid #f0f0f0;
-    border-bottom: 5px solid #43A1D5; /* Garis aksen biru Argentina di bawah */
+    border-bottom: 5px solid #43A1D5; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -886,34 +871,29 @@ body.soccer-theme {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efek melayang saat kursor diarahkan (hover) */
 .stats-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-/* Tipografi untuk Angka (Super Besar & Mewah) */
 .stats-card strong {
-    font-size: 3.5rem; /* Ukuran angka sangat besar */
+    font-size: 3.5rem; 
     font-weight: 900;
     line-height: 1;
     margin-bottom: 10px;
-    /* Efek teks gradasi warna (biru ke ungu/hitam) */
     background: linear-gradient(135deg, #43A1D5 0%, #004170 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Tipografi untuk Label/Teks Keterangan */
 .stats-card span {
     font-size: 1.1rem;
     color: #555555;
     font-weight: 600;
-    text-transform: uppercase; /* Huruf kapital semua */
+    text-transform: uppercase; 
     letter-spacing: 1px;
 }
 
-/* Catatan kaki statistik */
 .stats-note {
     text-align: center;
     font-size: 0.9rem;
@@ -923,20 +903,17 @@ body.soccer-theme {
 }
 
 /* ==================================================================GOLLLL==================================================================*/
-/* Container Video agar berbentuk grid berjajar */
 .video-grid {
     display: grid;
-    /* Otomatis membuat 3 kolom di PC, 1 di HP */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
-/* Desain Kartu Video */
 .video-card {
     background: #ffffff;
     border-radius: 12px;
-    overflow: hidden; /* Mencegah video keluar dari lengkungan border */
+    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -946,12 +923,9 @@ body.soccer-theme {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* 
-  Trik CSS untuk membuat iframe YouTube responsif dan selalu rasio 16:9 
-*/
 .video-frame {
     position: relative;
-    padding-bottom: 56.25%; /* Rasio 16:9 (9 / 16 * 100) */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
 }
@@ -965,7 +939,6 @@ body.soccer-theme {
     border: none;
 }
 
-/* Teks Keterangan di bawah video */
 .video-caption {
     padding: 18px 20px;
     margin: 0;
@@ -977,7 +950,6 @@ body.soccer-theme {
 }
 
 /* ==================================================================SKILLLL==================================================================*/
-/* Container Skills agar terbagi menjadi 2 kolom di layar lebar */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -992,7 +964,6 @@ body.soccer-theme {
     gap: 10px;
 }
 
-/* Mengatur posisi Nama Skill (kiri) dan Angka % (kanan) */
 .skill-label {
     display: flex;
     justify-content: space-between;
@@ -1002,98 +973,81 @@ body.soccer-theme {
 }
 
 .skill-label span:last-child {
-    color: #43A1D5; /* Warna aksen biru untuk angkanya */
+    color: #43A1D5; 
 }
 
-/* Latar belakang bar (jalur abu-abu) */
 .skill-bar {
     width: 100%;
     height: 12px;
-    background-color: #e5e7eb; /* Abu-abu terang */
+    background-color: #e5e7eb; 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Isi bar (warna gradasi yang merepresentasikan nilai persen) */
 .skill-fill {
     height: 100%;
-    /* Gradasi Biru khas Argentina/Mewah */
     background: linear-gradient(90deg, #43A1D5 0%, #004170 100%);
     border-radius: 10px;
-    
-    /* Efek animasi dari angka 0 ke angka tujuan saat diload */
     transform-origin: left;
     animation: barBerjalan 1.5s ease-out forwards;
 }
 
-/* Animasi untuk Progress Bar */
 @keyframes barBerjalan {
     0% { transform: scaleX(0); }
     100% { transform: scaleX(1); }
 }
 
 /* ==================================================================MITRA EUY==================================================================*/
-/* Container Utama Grid */
 .partner-grid {
     display: grid;
-    /* Otomatis membuat 2 kolom di layar lebar, 1 kolom di HP */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-/* Desain Dasar Kartu (Sleek & Clean) */
 .partner-card {
     background: #ffffff;
     padding: 40px 30px;
     border-radius: 16px;
     position: relative;
-    overflow: hidden; /* Penting agar efek background tidak keluar batas */
+    overflow: hidden; 
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     border: 1px solid #f4f4f4;
-    
-    /* Animasi bouncy saat kartu terangkat */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1;
 }
 
-/* Elemen Rahasia untuk Efek "WOW" (Background yang tersembunyi di bawah) */
 .partner-card::before {
     content: "";
     position: absolute;
-    top: 100%; /* Mulai dari luar layar bagian bawah kartu */
+    top: 100%; 
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradasi hijau senada dengan tombol di bagian bawah website Anda */
-    background: linear-gradient(135deg, #1e7e34 0%, #2ecc71 100%);
+    background: linear-gradient(135deg, #52e57c 0%, #38b056 100%);
     transition: top 0.4s ease-out;
     z-index: -1;
 }
 
-/* Efek saat kursor diarahkan ke kartu (Hover) */
 .partner-card:hover {
-    transform: translateY(-10px); /* Kartu melayang naik */
-    box-shadow: 0 15px 35px rgba(46, 204, 113, 0.3); /* Bayangan berubah kehijauan */
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 35px rgba(106, 255, 131, 0.3); 
 }
 
-/* Menarik background hijau ke atas menutupi kartu */
 .partner-card:hover::before {
     top: 0; 
 }
 
-/* Tipografi Judul */
 .partner-card h3 {
     font-size: 22px;
     font-weight: 800;
     color: #222222;
     margin-top: 0;
     margin-bottom: 15px;
-    transition: color 0.3s ease; /* Transisi warna teks agar halus */
+    transition: color 0.3s ease; 
 }
 
-/* Tipografi Paragraf */
 .partner-card p {
     font-size: 15px;
     color: #666666;
@@ -1102,11 +1056,6 @@ body.soccer-theme {
     transition: color 0.3s ease;
 }
 
-/* 
-  Kunci Estetika: 
-  Mengubah teks menjadi putih saat background hijau naik, 
-  sehingga tetap terbaca dengan kontras yang baik. 
-*/
 .partner-card:hover h3,
 .partner-card:hover p {
     color: #ffffff;
