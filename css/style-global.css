@@ -36,6 +36,24 @@ body.soccer-theme {
     padding: 0 1.25rem;
 }
 
+.section-heading {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.section-title {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+}
+
+.section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
 @keyframes spinBall {
     from {
         transform: rotate(0deg);

@@ -1,0 +1,298 @@
+.fanmail-hero-section {
+    padding: 3.5rem 0 2rem;
+    background-color: var(--color-white);
+    background-image: 
+        linear-gradient(rgba(59, 56, 56, 0.605),rgba(23, 24, 23, 0.721)),
+        url('../assets/images/messigoatphoto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 70%;
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.fanmail-form-section {
+    padding: 2.5rem 0; 
+    margin: 0 auto;
+    background-color: var(--color-bg);
+}
+
+.fanmail-hero-section .section-title,
+.fanmail-hero-section .section-sub {
+    color: var(--color-white);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.252);
+}
+
+.fanmail-hero-section .section-sub {
+    font-size: small;
+}
+
+.fanmail-form {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-row label,
+.form-label-static {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row textarea {
+    font-family: var(--font-base);
+    font-size: 0.95rem;
+    padding: 0.65rem 0.85rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+
+    color: var(--text-dark);
+    background-color: var(--color-white);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-row input[type="text"]:focus,
+.form-row input[type="email"]:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.15);
+}
+
+.form-row textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.radio-option input {
+    accent-color: var(--green);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.fanmail-form .btn-primary {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    background-color: var(--green);
+    color: var(--color-white);
+}
+
+.fanmail-form .btn-primary:hover .spinning-on-hover {
+    transform: rotate(360deg);
+}
+
+/* HAPUS max-width dan margin di sini biar ga double padding sama .container */
+.faq-section {
+    padding: 2.5rem 0;
+    background-color: transparent;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.faq-header .section-title,
+.faq-header .section-sub {
+    color: var(--text-dark);
+}
+
+.faq-header .section-title {
+    font-size: 2.15rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.35rem;
+}
+
+.faq-header .section-sub {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.15;
+    margin-top: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.faq-list {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.25rem 1.1rem;
+    background-color: var(--color-bg);
+    transition: border-color 0.25s ease;
+}
+
+.faq-item[open],
+.faq-item:hover {
+    border-color: var(--green);
+}
+
+.faq-question {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.9rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-answer {
+    padding: 0 0 0.9rem 0;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.faq-icon {
+    font-size: 1.3rem;
+    color: var(--green);
+    font-weight: 700;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.cta-section {
+    padding: 2.5rem 0 4.5rem;
+    background-color: var(--color-bg);
+}
+
+.cta-box {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f0fdf4;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cta-ball {
+    margin-bottom: 1.25rem;
+}
+
+.cta-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.cta-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.cta-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-action .btn-primary {
+    background-color: var(--green);
+    color: var(--color-white);
+    border: 1px solid var(--green);
+}
+
+.cta-action .btn-primary:hover {
+    background-color: var(--green-dark);
+    border-color: var(--green-dark);
+}
+
+.cta-action .btn-outline {
+    color: var(--green-dark);
+    border: 2px solid var(--green-dark);
+}
+
+.cta-action .btn-outline:hover {
+    background-color: var(--green);
+    color: var(--color-white);
+    border-color: var(--green);
+}
+
+@media (max-width: 480px) {
+    .fanmail-form,
+    .faq-list {
+        padding: 1.5rem;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .cta-action {
+        flex-direction: column;
+    }
+}
