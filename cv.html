@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+    <!-- ===== HEADER ===== -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,50 +39,90 @@
     </header>
 
     <main>
-        <!-- ===== CV HERO: Foto + Bio Singkat ===== -->
-        <section id="cv-hero" class="cv-hero-section">
-            <div class="container cv-hero-container">
-                <div class="cv-photo-box">
-                    <img
-                        src="assets/images/messigoatphoto.jpg"
-                        alt="Foto Lionel Messi"
-                        class="cv-photo-img"
-                        width="220"
-                        height="220"
-                    >
-                    <span class="cv-number-badge">#10</span>
-                </div>
-
-                <div class="cv-bio-box">
-                    <span class="cv-eyebrow">Curriculum Vitae</span>
-                    <h1 class="cv-name">Lionel Andrés Messi</h1>
-                    <p class="cv-bio-text">
-                        Pesepakbola profesional asal Argentina, dikenal sebagai salah satu pemain terbaik
-                        sepanjang masa. Memiliki karakter pekerja keras, rendah hati, dan pantang menyerah —
-                        dibentuk dari perjalanan panjang sejak usia 13 tahun merantau ke Spanyol demi mengejar mimpi.
-                    </p>
-
-                    <div class="cv-stats-row">
-                        <div class="cv-stat-item">
-                            <strong>2</strong>
-                            <span>Piala Dunia Diikuti Final</span>
-                        </div>
-                        <div class="cv-stat-item">
-                            <strong>8</strong>
-                            <span>Ballon d'Or</span>
-                        </div>
-                        <div class="cv-stat-item">
-                            <strong>800+</strong>
-                            <span>Gol Karir Klub & Negara</span>
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-photo-box">
+                    <div class="photo-frame">
+                        <img 
+                            src="assets/images/messigoatphoto.jpg" 
+                            alt="Foto Lionel Messi" 
+                            class="messi-img"
+                            width="260"
+                            height="260"
+                        >
+                        <div class="ball-badge">
+                            <img src="assets/images/soccer-ball.jpg" alt="Bola Berputar" class="spinning-ball" width="46" height="46">
                         </div>
                     </div>
+                </div>
 
-                    <a href="assets/docs/CV-Lionel-Messi.pdf" class="btn-primary cv-download-btn" download>
-                        <span>Unduh CV (PDF)</span>
-                    </a>
+                <div class="hero-text-box">
+                    <h1 class="hero-name">Lionel Andrés Messi #10</h1>
+                    <p class="hero-roles">
+                        The GOAT | Juara Piala Dunia | <b>8 x Ballon d'Or Winner</b>
+                    </p>
+
+                    <div class="quote-box">
+                        <p class="quote-content">
+                            <i>"I start early and I stay late, day after day, year after year. It took me <b>17 years and 114 days</b> to become an <mark>overnight success</mark>."</i>
+                        </p>
+                        <small class="quote-by">Lionel Messi</small>
+                    </div>
+
+                    <div class="social-row">
+                        <a href="https://www.instagram.com/leomessi" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram Resmi @leomessi" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://messi.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Website Resmi Lionel Messi" aria-label="Website Resmi">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
+
+<!-- ===== BIOGRAFI ===== -->
+
+        <section id="biografi" class="cv-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">Biografi</h2>
+                    <p class="section-sub">Kisah hidup Lionel Messi, dari kota kecil di Argentina hingga menjadi ikon sepak bola dunia.</p>
+                </div>
+ 
+                <div class="bio-content">
+                    <p>
+                        Lionel Andrés Messi lahir pada 24 Juni 1987 di Rosario, Argentina, dari keluarga kelas
+                        pekerja sederhana. Sejak kecil, ia sudah menunjukkan bakat luar biasa dalam bermain sepak
+                        bola bersama klub lokal Newell's Old Boys. Namun perjalanan kariernya sempat terancam saat
+                        ia didiagnosis mengalami defisiensi hormon pertumbuhan pada usia 10 tahun — kondisi yang
+                        membutuhkan biaya pengobatan besar yang tidak mampu ditanggung keluarganya maupun klub asalnya.
+                    </p>
+                    <p>
+                        Titik balik terjadi ketika FC Barcelona bersedia membiayai pengobatannya dan merekrutnya ke
+                        akademi legendaris La Masia pada usia 13 tahun. Di sinilah karakter, teknik, dan filosofi
+                        bermain Messi ditempa. Ia melakukan debut profesional pada 2004, dan sejak itu tumbuh menjadi
+                        salah satu pesepakbola paling berpengaruh sepanjang sejarah.
+                    </p>
+                    <p>
+                        Di luar lapangan, Messi dikenal sebagai sosok yang rendah hati, pekerja keras, dan sangat
+                        mencintai keluarga. Ia menikah dengan Antonela Roccuzzo, teman masa kecilnya di Rosario, dan
+                        dikaruniai tiga orang putra. Karakter inilah yang membuatnya tidak hanya dicintai karena
+                        prestasi, tetapi juga karena kepribadiannya yang autentik.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+<!-- ===== PERJALANAN KARIER ===== -->
 
         <!-- ===== EXPERIENCE: Timeline ===== -->
         <section id="experience" class="cv-section">
@@ -90,7 +131,7 @@
                     <h2 class="section-title">Pengalaman & Karier</h2>
                     <p class="section-sub">Perjalanan profesional Lionel Messi dari akademi hingga panggung dunia.</p>
                 </div>
-
+ 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
@@ -101,7 +142,7 @@
                                 dan meraih 35 trofi bersama klub, termasuk 4 gelar Liga Champions.</p>
                         </div>
                     </div>
-
+ 
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
@@ -111,7 +152,7 @@
                                 sebagai juara dunia bersama Timnas Argentina pada masa ini.</p>
                         </div>
                     </div>
-
+ 
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
@@ -121,7 +162,7 @@
                                 Leagues Cup 2023 di musim pertamanya.</p>
                         </div>
                     </div>
-
+ 
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
@@ -135,50 +176,175 @@
             </div>
         </section>
 
-        <!-- ===== EDUCATION / PEMBENTUKAN ===== -->
-        <section id="education" class="cv-section cv-section-alt">
+<!-- ===== PENCAPAIAN PRIBADI ===== -->
+       <section id="achievements" class="cv-section cv-section-alt">
             <div class="container">
                 <div class="section-heading">
-                    <h2 class="section-title">Pendidikan & Pembentukan</h2>
-                    <p class="section-sub">Akademi dan lingkungan yang membentuk fondasi karier Messi.</p>
+                    <h2 class="section-title">Pencapaian Pribadi</h2>
+                    <p class="section-sub">Rekor dan penghargaan individu yang membentuk warisan Messi di sepak bola.</p>
                 </div>
-
-                <div class="education-grid">
-                    <div class="education-card">
-                        <span class="education-year">1995 — 2000</span>
-                        <h3>Newell's Old Boys</h3>
-                        <p>Memulai pembinaan sepak bola sejak usia 6 tahun di kota kelahirannya, Rosario, Argentina.</p>
+ 
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <span class="achievement-number">8x</span>
+                        <h3>Ballon d'Or</h3>
+                        <p>Rekor terbanyak sepanjang sejarah (2009, 2010, 2011, 2012, 2015, 2019, 2021, 2023).</p>
                     </div>
-
-                    <div class="education-card">
-                        <span class="education-year">2000 — 2003</span>
-                        <h3>Diagnosis & Tantangan Medis</h3>
-                        <p>Didiagnosis kekurangan hormon pertumbuhan; menjalani terapi rutin sambil terus berlatih.</p>
+ 
+                    <div class="achievement-card">
+                        <span class="achievement-number">6x</span>
+                        <h3>European Golden Shoe</h3>
+                        <p>Pencetak gol terbanyak di liga-liga top Eropa dalam satu musim, rekor terbanyak bersama.</p>
                     </div>
-
-                    <div class="education-card">
-                        <span class="education-year">2003 — 2005</span>
-                        <h3>La Masia, FC Barcelona</h3>
-                        <p>Direkrut akademi legendaris La Masia di usia 13 tahun, tempat menempa teknik dan filosofi bermain.</p>
+ 
+                    <div class="achievement-card">
+                        <span class="achievement-number">1x</span>
+                        <h3>Golden Ball Piala Dunia</h3>
+                        <p>Pemain terbaik turnamen Piala Dunia FIFA 2022 di Qatar.</p>
                     </div>
-
-                    <div class="education-card">
-                        <span class="education-year">2004</span>
-                        <h3>Debut Tim Utama</h3>
-                        <p>Melakukan debut profesional bersama FC Barcelona pada usia 17 tahun.</p>
+ 
+                    <div class="achievement-card">
+                        <span class="achievement-number">91</span>
+                        <h3>Gol dalam Setahun</h3>
+                        <p>Rekor dunia gol terbanyak dalam satu tahun kalender (2012).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+<!-- ===== TROFI KLUB ===== -->
+        <section id="trophies" class="cv-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">Trofi Bersama Klub</h2>
+                    <p class="section-sub">Koleksi gelar juara yang diraih Messi bersama tim-tim yang pernah dibelanya.</p>
+                </div>
+ 
+                <div class="trophy-grid">
+                    <div class="trophy-card">
+                        <h3>FC Barcelona</h3>
+                        <ul class="trophy-list">
+                            <li>10x La Liga</li>
+                            <li>4x UEFA Champions League</li>
+                            <li>7x Copa del Rey</li>
+                            <li>3x FIFA Club World Cup</li>
+                        </ul>
+                    </div>
+ 
+                    <div class="trophy-card">
+                        <h3>Paris Saint-Germain</h3>
+                        <ul class="trophy-list">
+                            <li>2x Ligue 1</li>
+                            <li>1x Trophée des Champions</li>
+                        </ul>
+                    </div>
+ 
+                    <div class="trophy-card">
+                        <h3>Inter Miami CF</h3>
+                        <ul class="trophy-list">
+                            <li>1x Leagues Cup (2023)</li>
+                            <li>1x Supporters' Shield (2024)</li>
+                        </ul>
+                    </div>
+ 
+                    <div class="trophy-card">
+                        <h3>Timnas Argentina</h3>
+                        <ul class="trophy-list">
+                            <li>1x Piala Dunia FIFA (2022)</li>
+                            <li>2x Copa América (2021, 2024)</li>
+                            <li>1x Finalissima (2022)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+<!-- ===== STATISTIK ===== -->
+        <section id="statistics" class="cv-section cv-section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">Statistik Karier</h2>
+                    <p class="section-sub">Angka-angka yang merepresentasikan konsistensi Messi sepanjang kariernya.</p>
+                </div>
+ 
+                <div class="stats-grid">
+                    <div class="stats-card">
+                        <strong>850+</strong>
+                        <span>Total Gol Karier</span>
+                    </div>
+                    <div class="stats-card">
+                        <strong>380+</strong>
+                        <span>Total Assist Karier</span>
+                    </div>
+                    <div class="stats-card">
+                        <strong>1050+</strong>
+                        <span>Total Penampilan</span>
+                    </div>
+                    <div class="stats-card">
+                        <strong>110+</strong>
+                        <span>Gol Bersama Timnas</span>
+                    </div>
+                </div>
+                <p class="stats-note">*Angka bersifat kumulatif dan dapat bertambah seiring Messi masih aktif bermain.</p>
+            </div>
+        </section>
+ 
+<!-- ===== CUPLIKAN GOL TERBAIK ===== -->
+        <section id="best-goals" class="cv-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">Cuplikan Gol Terbaik</h2>
+                    <p class="section-sub">Beberapa momen gol paling ikonik sepanjang karier Lionel Messi.</p>
+                </div>
+ 
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <iframe
+                                src="https://www.youtube.com/embed/hzJ9wY8zCs4"
+                                title="Gol Terbaik Messi 1"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <p class="video-caption">Gol individu vs Getafe (2007)</p>
+                    </div>
+ 
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <iframe
+                                src="https://www.youtube.com/embed/hzJ9wY8zCs4"
+                                title="Gol Terbaik Messi 2"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <p class="video-caption">Gol final Piala Dunia 2022</p>
+                    </div>
+ 
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <iframe
+                                src="https://www.youtube.com/embed/hzJ9wY8zCs4"
+                                title="Gol Terbaik Messi 3"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <p class="video-caption">Gol melewati 5 pemain vs Getafe</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== SKILLS ===== -->
+<!-- ===== SKILL ===== -->
         <section id="skills" class="cv-section">
             <div class="container">
                 <div class="section-heading">
                     <h2 class="section-title">Kemampuan Utama</h2>
                     <p class="section-sub">Atribut permainan yang menjadi ciri khas Lionel Messi di lapangan.</p>
                 </div>
-
+ 
                 <div class="skills-grid">
                     <div class="skill-item">
                         <div class="skill-label">
@@ -187,7 +353,7 @@
                         </div>
                         <div class="skill-bar"><div class="skill-fill" style="width: 98%;"></div></div>
                     </div>
-
+ 
                     <div class="skill-item">
                         <div class="skill-label">
                             <span>Finishing</span>
@@ -195,7 +361,7 @@
                         </div>
                         <div class="skill-bar"><div class="skill-fill" style="width: 96%;"></div></div>
                     </div>
-
+ 
                     <div class="skill-item">
                         <div class="skill-label">
                             <span>Vision & Passing</span>
@@ -203,7 +369,7 @@
                         </div>
                         <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
                     </div>
-
+ 
                     <div class="skill-item">
                         <div class="skill-label">
                             <span>Free Kick</span>
@@ -211,7 +377,7 @@
                         </div>
                         <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
                     </div>
-
+ 
                     <div class="skill-item">
                         <div class="skill-label">
                             <span>Leadership</span>
@@ -219,7 +385,7 @@
                         </div>
                         <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
                     </div>
-
+ 
                     <div class="skill-item">
                         <div class="skill-label">
                             <span>Konsistensi</span>
@@ -231,7 +397,40 @@
             </div>
         </section>
 
-        <!-- ===== CTA ===== -->
+  <!-- ===== AKTIVITAS BERSAMA MITRA ===== -->
+
+        <section id="partners" class="cv-section cv-section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">Aktivitas Bersama Mitra</h2>
+                    <p class="section-sub">Kolaborasi Messi dengan berbagai merek dan yayasan di luar lapangan.</p>
+                </div>
+ 
+                <div class="partner-grid">
+                    <div class="partner-card">
+                        <h3>Adidas</h3>
+                        <p>Duta merek global sejak 2006, merilis lini sepatu signature "Messi" yang dipakai jutaan pemain muda di seluruh dunia.</p>
+                    </div>
+ 
+                    <div class="partner-card">
+                        <h3>Yayasan Leo Messi</h3>
+                        <p>Mendirikan yayasan amal untuk mendukung akses pendidikan dan kesehatan bagi anak-anak kurang mampu di Argentina dan dunia.</p>
+                    </div>
+ 
+                    <div class="partner-card">
+                        <h3>PepsiCo</h3>
+                        <p>Menjadi bagian dari kampanye global "Live for Now", tampil dalam berbagai iklan bersama atlet dunia lainnya.</p>
+                    </div>
+ 
+                    <div class="partner-card">
+                        <h3>Inter Miami / Apple</h3>
+                        <p>Bergabung dengan MLS lewat kemitraan strategis siaran Apple TV, turut mendorong popularitas sepak bola di Amerika Serikat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+<!-- ===== CTA ===== -->
         <section id="cv-cta" class="cta-section">
             <div class="container">
                 <div class="cta-box">
